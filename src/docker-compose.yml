@@ -1,0 +1,17 @@
+version: "3.3"
+services:
+  # midjourney_api
+  midjourney_api:
+    container_name: midjourney_api
+    image: wali/midjourney_api:v1.0.0
+
+
+  # chatgpt-midjourney-prompt
+  chatgpt-midjourney-prompt:
+    container_name: chatgpt-midjourney-prompt
+    image: wali/chatgpt-midjourney-prompt:v1.0.0
+    ports:
+      - "6001:6001"
+    env_file: .env
+    depends_on:
+      - midjourney_api
