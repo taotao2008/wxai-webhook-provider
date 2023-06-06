@@ -47,10 +47,12 @@ def createImRoomAll(user_name):
         user_id = server.get('user_id')
         bots = server.get('bots')
         for bot_name in bots:
-            ret_roo = postCreateImRoom(url, token, user_id, user_name, bot_name)
-            if ret_roo.get('success') :
-                room_id = ret_roo.get('room').get('rid')
+            ret_room = postCreateImRoom(url, token, user_id, user_name, bot_name)
+            print(ret_room)
+            if ret_room.get('success') :
+                room_id = ret_room.get('room').get('rid')
                 ret_open_room = postOpenImRoom(url, token, user_id, room_id)
+                print(ret_open_room)
 
                 if ret_open_room.get('success'):
                     return {'status': 'success'}

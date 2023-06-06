@@ -19,6 +19,7 @@ app = Flask(__name__)
 def send_message_webhook():
     # 从请求中获取关键词参数
     data = request.get_json()
+    print(data)
     user_name = data.get('user_name')
 
     # 交由线程去执行耗时任务
