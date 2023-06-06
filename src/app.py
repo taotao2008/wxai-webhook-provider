@@ -27,9 +27,6 @@ def send_message_webhook():
         future_result = executor.submit(userCreatedWebhookFun, user_name)
         ret = future_result.result()
 
-    print(ret)
-    print('taotao#######')
-
     return jsonify(ret)
 
 
