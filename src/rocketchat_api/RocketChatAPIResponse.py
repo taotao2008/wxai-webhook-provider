@@ -52,14 +52,12 @@ def createImRoomAll(user_name):
             if ret_room.get('success') :
                 room_id = ret_room.get('room').get('rid')
                 ret_open_room = postOpenImRoom(url, token, user_id, room_id)
-                print(ret_open_room)
 
-                if ret_open_room.get('success'):
-                    return {'status': 'success'}
-                else:
+                if not ret_open_room.get('success'):
                     return {'status': 'ERROR'}
             else:
                 return {'status': 'ERROR'}
+    return {'status': 'success'}
 
 
 if __name__ == '__main__':
