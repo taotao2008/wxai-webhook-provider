@@ -6,7 +6,7 @@ import concurrent.futures
 import re
 # DOCS https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.ThreadPoolExecutor
 # 创建线程池执行器
-from src.rocketchat_api.RocketChatAPIResponse import createImRoomAll
+from rocketchat_api.RocketChatAPIResponse import createImRoomAll
 
 executor = ThreadPoolExecutor(10)
 

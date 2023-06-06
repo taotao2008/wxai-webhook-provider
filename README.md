@@ -131,5 +131,5 @@ Run:
 
 docker build --no-cache -t wali/wxai-webhook-provider:v1.0.0 .
 mkdir ./data
-cp -rf config_demo/sender_pararms.json ./data/
-docker run -idt --name wxai_webhook_provider -p 6005:6005 -v ./data/sender_pararms.json:/opt/wxai-webhook-provider/src/rocketchat_api/sender_pararms.json:rw    wali/wxai-webhook-provider:v1.0.0
+cp -rf config_demo/sender_params.json ./data/
+docker run -idt --name wxai_webhook_provider -p 6005:6005 -v ./data/sender_params.json:/opt/wxai-webhook-provider/src/rocketchat_api/sender_params.json:rw    wali/wxai-webhook-provider:v1.0.0
