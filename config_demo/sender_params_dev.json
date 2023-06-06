@@ -1,0 +1,12 @@
+{
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "token": "gsIGghOK1EVwORW24yo_6biftYkumiHuAJVquCW-7rv",
+      "user_id": "vCdHPBr3RodWyjzyF",
+      "bots": [
+        "imagine.bot"
+      ]
+    }
+  ]
+}

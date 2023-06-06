@@ -127,5 +127,9 @@ And also [acheong08](https://github.com/acheong08) for creating [ChatGPT](https:
 ## Future
 
 
-docker build --no-cache -f Dockerfile -t wali/chatgpt_midjourney_prompt:v1.3 .
-docker run -idt --name chatgpt-midjourney-prompt -p 6001:6001 --env URL_MJ_PROMPT=http://mj-api.aizen.chat:5000/api/send_and_receive --env OPENAI_KEY=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 wali/chatgpt_midjourney_prompt:v1.3
+Run:
+
+docker build --no-cache -t wali/wxai-webhook-provider:v1.0.0 .
+mkdir ./data
+cp -rf config_demo/sender_pararms.json ./data/
+docker run -idt --name wxai_webhook_provider -p 6005:6005 -v ./data/sender_pararms.json:/opt/wxai-webhook-provider/src/rocketchat_api/sender_pararms.json:rw    wali/wxai-webhook-provider:v1.0.0
