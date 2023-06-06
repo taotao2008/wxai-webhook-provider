@@ -1,0 +1,12 @@
+{
+  "servers": [
+    {
+      "url": "https://chat.aizen.chat",
+      "token": "deBfzE-jIJqo4Jp5iTJUSUQhLL4wFwPNxpcpqWGqd1m",
+      "user_id": "thfs6Wqhk9RW5tSAL",
+      "bots": [
+        "imagine.bot"
+      ]
+    }
+  ]
+}
