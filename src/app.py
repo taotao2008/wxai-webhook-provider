@@ -7,6 +7,7 @@ import re
 # DOCS https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.ThreadPoolExecutor
 # 创建线程池执行器
 from rocketchat_api.RocketChatAPIResponse import createImRoomAll
+from rocketchat_api.RocketChatAPIResponse import setPreferencesAll
 
 executor = ThreadPoolExecutor(10)
 
@@ -21,19 +22,21 @@ def send_message_webhook():
     data = request.get_json()
     print(data)
     user_name = data.get('user_name')
+    user_id = data.get('user_id')
 
     # 交由线程去执行耗时任务
     ret = None
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        future_result = executor.submit(userCreatedWebhookFun, user_name)
+        future_result = executor.submit(userCreatedWebhookFun, user_name, user_id)
         ret = future_result.result()
 
     return jsonify(ret)
 
 
-def userCreatedWebhookFun(user_name):
+def userCreatedWebhookFun(user_name, user_id):
     # 响应返回
     ret = createImRoomAll(user_name)
+    ret2 = setPreferencesAll(user_id)
     return ret
 
 
