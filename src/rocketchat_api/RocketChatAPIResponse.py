@@ -62,7 +62,7 @@ def createImRoomAll(user_name):
 
 
 def postPreferences(wxai_url, wxai_token, wxai_user_id, user_id):
-    url = wxai_url + "/api/v1/setPreferences"
+    url = wxai_url + "/api/v1/users.setPreferences"
     headers = {
         'X-Auth-Token': wxai_token,  # access_token 是你的访问令牌
         'X-User-Id': wxai_user_id
@@ -95,8 +95,11 @@ def setPreferencesAll(setting_user_id):
 
 
 if __name__ == '__main__':
-    user_name = 'taotao2010'
-    print(createImRoomAll(user_name))
+    #user_name = 'taotao2010'
+    #print(createImRoomAll(user_name))
+
+    user_id = 'XiP8jfr7Muf2x2vKW'
+    print(setPreferencesAll(user_id))
     # loop = asyncio.new_event_loop()
     # asyncio.set_event_loop(loop)
     # loop.run_until_complete(getInstance())
