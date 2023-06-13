@@ -72,7 +72,9 @@ def postPreferences(wxai_url, wxai_token, wxai_user_id, user_id):
     playload = {
         "userId": user_id,
         "data": {
-            "language": "zh"
+            "language": "zh",
+            "sidebarGroupByType": True,
+            "sidebarShowFavorites":True
         }
     }
 
