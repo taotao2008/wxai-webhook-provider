@@ -18,7 +18,8 @@ def postCreateImRoom(wxai_url, wxai_token, wxai_user_id, user_name, bot_name):
 
     playload = {
         "usernames": user_name + "," + bot_name,
-        "excludeSelf": True
+        "excludeSelf": True,
+        "x_user_id": wxai_user_id
     }
 
     response = requests.post(url, json=playload, headers=headers)
