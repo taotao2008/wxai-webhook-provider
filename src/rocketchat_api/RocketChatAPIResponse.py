@@ -55,10 +55,6 @@ def createImRoomAll(user_name):
                 room_id = ret_room.get('room').get('rid')
                 ret_open_room = postOpenImRoom(url, token, user_id, room_id)
 
-                if not ret_open_room.get('success'):
-                    return {'status': 'ERROR'}
-            else:
-                return {'status': 'ERROR'}
     return {'status': 'success'}
 
 
@@ -90,19 +86,17 @@ def setPreferencesAll(setting_user_id):
         user_id = server.get('user_id')
 
         ret_set_preferences = postPreferences(url, token, user_id, setting_user_id)
-        if not ret_set_preferences.get('success'):
-            return {'status': 'ERROR'}
 
     return {'status': 'success'}
 
 
 
 if __name__ == '__main__':
-    #user_name = 'taotao2010'
-    #print(createImRoomAll(user_name))
+    user_name = 'a1006'
+    print(createImRoomAll(user_name))
 
-    user_id = 'XiP8jfr7Muf2x2vKW'
-    print(setPreferencesAll(user_id))
+    #user_id = 'XiP8jfr7Muf2x2vKW'
+    #print(setPreferencesAll(user_id))
     # loop = asyncio.new_event_loop()
     # asyncio.set_event_loop(loop)
     # loop.run_until_complete(getInstance())
