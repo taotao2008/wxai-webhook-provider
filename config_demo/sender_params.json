@@ -7,6 +7,14 @@
       "bots": [
         "imagine.bot"
       ]
+    },
+    {
+      "url": "https://chat.qmai.chat",
+      "token": "fmUaYHhT1JUrBieywiNRDAEiHUtNJaRh_ZsPaBBLz7C",
+      "user_id": "GENjBqZk4HsZupNfh",
+      "bots": [
+        "chatgpt.bot"
+      ]
     }
   ]
 }
