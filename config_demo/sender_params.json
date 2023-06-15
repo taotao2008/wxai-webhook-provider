@@ -1,9 +1,9 @@
 {
   "servers": [
     {
-      "url": "https://chat.aizen.chat",
-      "token": "deBfzE-jIJqo4Jp5iTJUSUQhLL4wFwPNxpcpqWGqd1m",
-      "user_id": "thfs6Wqhk9RW5tSAL",
+      "url": "https://picture.qmai.chat",
+      "token": "JwAFQ3m0VDA_nFw8dolC8HmMvNsdslP_YnBLfhXvaqB",
+      "user_id": "otmmfgQ9LdeG7PFsG",
       "bots": [
         "imagine.bot"
       ]
