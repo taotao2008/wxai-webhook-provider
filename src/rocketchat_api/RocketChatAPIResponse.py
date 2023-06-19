@@ -10,7 +10,7 @@ with open(params, 'r') as f:
 
 
 def postCreateImRoom(wxai_url, wxai_token, wxai_user_id, user_name, bot_name):
-    url = wxai_url + "/api/v1/im.create"
+    url = wxai_url + "/api/v1/im.create.auto"
     headers = {
         'X-Auth-Token': wxai_token,  # access_token 是你的访问令牌
         'X-User-Id': wxai_user_id
@@ -92,7 +92,7 @@ def setPreferencesAll(setting_user_id):
 
 
 if __name__ == '__main__':
-    user_name = 'a1006'
+    user_name = 'a1033'
     print(createImRoomAll(user_name))
 
     #user_id = 'XiP8jfr7Muf2x2vKW'
