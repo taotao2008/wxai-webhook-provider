@@ -68,7 +68,7 @@ def postPreferences(wxai_url, wxai_token, wxai_user_id, user_id):
     playload = {
         "userId": user_id,
         "data": {
-            "language": "zh",
+            #"language": "zh",
             "sidebarGroupByType": True,
             "sidebarShowFavorites":True
         }
@@ -92,7 +92,7 @@ def setPreferencesAll(setting_user_id):
 
 
 if __name__ == '__main__':
-    user_name = 'a1033'
+    user_name = 'a1060'
     print(createImRoomAll(user_name))
 
     #user_id = 'XiP8jfr7Muf2x2vKW'
