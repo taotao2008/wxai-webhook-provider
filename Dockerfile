@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y ca-certificates
 RUN apt-get install git -y
 WORKDIR /opt/
 RUN git clone -b wali https://github.com/taotao2008/wxai-webhook-provider.git
-WORKDIR /opt/wxai-webhook-provider/src
+WORKDIR /opt/wxai-webhook-provider
 RUN git pull
 RUN pip install --no-cache-dir -r requirements.txt
 COPY ./docker-entrypoint.sh /
