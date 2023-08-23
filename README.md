@@ -129,7 +129,7 @@ And also [acheong08](https://github.com/acheong08) for creating [ChatGPT](https:
 
 Run:
 git clone https://github.com/taotao2008/wxai-webhook-provider.git
-docker build --no-cache -t wali/wxai-webhook-provider:v3.1.0 .
+docker build --no-cache -t gsta/wxai-webhook-provider:v3.5.0  .
 mkdir ./data
 cp -rf config_demo/sender_params.json ./data/
 

@@ -4,9 +4,9 @@ import requests
 import os
 import json
 
-from src.config.ConfigVars import QMAI_URL_BASE
-from src.qmai_rest.qmai_upload import uploadCostomFile, uploadImagine
-from src.utils.audio_util import download_file, get_filename_from_url
+from config.ConfigVars import QMAI_URL_BASE
+from qmai_rest.qmai_upload import uploadImagine
+from utils.audio_util import download_file, get_filename_from_url
 
 global sender_params
 current_directory = os.path.dirname(os.path.abspath(__file__))

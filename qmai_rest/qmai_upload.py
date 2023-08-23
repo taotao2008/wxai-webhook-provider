@@ -3,7 +3,7 @@ import json
 import requests
 
 
-from src.config.ConfigVars import X_AUTH_TOKEN, X_USER_ID, QMAI_UPLOAD_URL
+from config.ConfigVars import X_AUTH_TOKEN, X_USER_ID, QMAI_UPLOAD_URL
 
 
 def uploadFile(file_dir, file_name):
