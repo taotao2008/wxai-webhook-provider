@@ -6,8 +6,9 @@ import concurrent.futures
 import re
 # DOCS https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.ThreadPoolExecutor
 # 创建线程池执行器
-from rocketchat_api.RocketChatAPIResponse import createImRoomAll
-from rocketchat_api.RocketChatAPIResponse import setPreferencesAll
+from qmai_rest.RocketChatAPIResponse import createImRoomAll
+from qmai_rest.RocketChatAPIResponse import setPreferencesAll
+from qmai_rest.RocketChatAPIResponse import setAvatarAll
 
 executor = ThreadPoolExecutor(10)
 
@@ -35,8 +36,13 @@ def send_message_webhook():
 
 def userCreatedWebhookFun(user_name, user_id):
     # 响应返回
+    #添加默认机器人
     ret = createImRoomAll(user_name)
+    #设置默认配置
     ret2 = setPreferencesAll(user_id)
+    #设置随机头像
+    ret3 = setAvatarAll(user_id)
+
     return ret
 
 

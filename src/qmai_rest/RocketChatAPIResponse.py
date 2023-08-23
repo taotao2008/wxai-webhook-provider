@@ -1,6 +1,12 @@
+import random
+
 import requests
 import os
 import json
+
+from src.config.ConfigVars import QMAI_URL_BASE
+from src.qmai_rest.qmai_upload import uploadCostomFile, uploadImagine
+from src.utils.audio_util import download_file, get_filename_from_url
 
 global sender_params
 current_directory = os.path.dirname(os.path.abspath(__file__))
@@ -65,6 +71,7 @@ def postPreferences(wxai_url, wxai_token, wxai_user_id, user_id):
         'X-User-Id': wxai_user_id
     }
 
+
     playload = {
         "userId": user_id,
         "data": {
@@ -89,11 +96,60 @@ def setPreferencesAll(setting_user_id):
 
     return {'status': 'success'}
 
+def setAvatar(wxai_url, wxai_token, wxai_user_id, user_id, avatarUrl):
+
+    url = wxai_url + "/api/v1/users.setAvatar"
+
+    payload = json.dumps({
+        "avatarUrl": avatarUrl,
+        "userId": user_id
+    })
+    headers = {
+        'X-Auth-Token': wxai_token,
+        'X-User-Id': wxai_user_id,
+        'Content-Type': 'application/json'
+    }
+
+    response = requests.request("POST", url, headers=headers, data=payload)
+
+    print(response.text)
+    return response.json()
+
+
+
+def setAvatarAll(setting_user_id):
+    global sender_params
+    random_id = random.randint(1, 2000)
+    filename_or_dir = "./images/"
+    url = "https://shop.jind.cloud/avatars/avatar" + str(random_id) + ".jpg"
+    # 下载文件
+    file_path = download_file(url, filename_or_dir)
+    # print(file_path)
+
+    # 上传到room
+    file_name = get_filename_from_url(url)
+    image_url = uploadImagine(file_path, file_name)
+    # 成功则发送im messaging
+    if (image_url != 'ERROR'):
+        for server in sender_params.get('servers'):
+            wxai_url = server.get('url')
+            wxai_token = server.get('token')
+            wxai_user_id = server.get('user_id')
+
+            avatarUrl = QMAI_URL_BASE + image_url
+            #avatarUrl = 'https://chat.qmai.chat/file-upload/YMd8HtsahJRY7xGpr/avatar13.jpg?download'
+            setAvatar(wxai_url, wxai_token, wxai_user_id, setting_user_id, avatarUrl)
+
+    return {'status': 'success'}
+
 
 
 if __name__ == '__main__':
-    user_name = 'a1060'
-    print(createImRoomAll(user_name))
+    # user_name = 'a1060'
+    # print(createImRoomAll(user_name))
+
+    user_id = 'ZbZXTAhY8KEX4ZkHG'
+    print(setAvatarAll(user_id))
 
     #user_id = 'XiP8jfr7Muf2x2vKW'
     #print(setPreferencesAll(user_id))
