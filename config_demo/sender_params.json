@@ -24,8 +24,8 @@
       "token": "0WqwDuCCI7EGQy-GSqWPHqG_CeVsfj1eR4NV4GtcsEh",
       "user_id": "Wk4CS6da8i3hgeXRu",
       "bots": [
-        "chatgpt.bot",
-        "chatgptplus.bot",
+        "gpt.bot",
+        "gptplus.bot",
         "support"
       ]
     }
