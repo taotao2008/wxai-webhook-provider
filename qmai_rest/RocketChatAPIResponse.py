@@ -145,11 +145,11 @@ def setAvatarAll(setting_user_id):
 
 
 if __name__ == '__main__':
-    # user_name = 'a1060'
-    # print(createImRoomAll(user_name))
+    user_name = 'a2030'
+    print(createImRoomAll(user_name))
 
-    user_id = 'ZbZXTAhY8KEX4ZkHG'
-    print(setAvatarAll(user_id))
+    #user_id = 'ZbZXTAhY8KEX4ZkHG'
+    #print(setAvatarAll(user_id))
 
     #user_id = 'XiP8jfr7Muf2x2vKW'
     #print(setPreferencesAll(user_id))
